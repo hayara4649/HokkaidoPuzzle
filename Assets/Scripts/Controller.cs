@@ -6,7 +6,7 @@ public class Controller : MonoBehaviour
 {
     // RaycastHit hit; //レイキャストが当たったものを取得する入れ物
     RaycastHit2D hit;
-    bool isMoving = false;
+    [SerializeField] bool isMoving = false;
     Vector2 firstPos;
     Vector2 posDistance;
     Vector2 puzzlePos;
@@ -18,8 +18,8 @@ public class Controller : MonoBehaviour
 
     private void Start()
     {
-        adjustX = 60.0f / Screen.width;
-        adjustY = 33.0f / Screen.height;
+        adjustX = 37.0f / Screen.width;
+        adjustY = 21.0f / Screen.height;
 
         //         Debug.Log(adjustX);
         // Debug.Log(adjustY);
@@ -32,9 +32,7 @@ public class Controller : MonoBehaviour
             Input.mousePosition.x * adjustX,
             Input.mousePosition.y * adjustY
             );
-        // mousePos = Input.mousePosition;
-        // Debug.Log("posX = "　+ Input.mousePosition.x * adjustX
-        //             + "posy = " + Input.mousePosition.y * adjustY);
+            
 
         if (Input.GetMouseButtonDown(0)) //マウスがクリックされたら
         {
@@ -47,13 +45,11 @@ public class Controller : MonoBehaviour
             if (hit.collider)
             {
                 // if (Physics.Raycast(ray, out hit, distance))  //マウスのポジションからRayを投げて何かに当たったらhitに入れる
-                if (hit.collider.CompareTag("Puzzle"))
+                if (hit.collider.CompareTag("Puzzle") && !(hit.collider.GetComponent<AreaManager>().isPutted) )
                 {
                     selectedPuzzle = hit.collider.gameObject;
                     posDistance = firstPos - (Vector2)selectedPuzzle.transform.position;
                     isMoving = true;
-                    // string objectName = hit.collider.gameObject.name; //オブジェクト名を取得して変数に入れる
-                    // Debug.Log(objectName); //オブジェクト名をコンソールに表示
                 }
             }
         }
@@ -69,21 +65,19 @@ public class Controller : MonoBehaviour
     void Moving()
     {
         puzzlePos = mousePos - posDistance;
-        // puzzlePos = Input.mousePosition;
-        // Debug.Log(puzzlePos);
         selectedPuzzle.transform.position = puzzlePos;
 
         float dz = Input.GetAxis("Horizontal");
         selectedPuzzle.transform.Rotate(0, 0, dz * rotateSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log(("aaa"));
-        if (other.gameObject.CompareTag("Hokkaido"))
-        {
-            // safeMaterial.color =new Color (255,0,0,100);
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     Debug.Log(("aaa"));
+    //     if (other.gameObject.CompareTag("Hokkaido"))
+    //     {
+    //         // safeMaterial.color =new Color (255,0,0,100);
+    //     }
+    // }
 
 }

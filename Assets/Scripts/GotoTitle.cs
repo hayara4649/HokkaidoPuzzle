@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class GotoTitle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    SceneScript sceneScript;
+
+    private void Start() 
     {
-        
+        sceneScript = GameObject.Find("SceneManager").GetComponent<SceneScript>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) SceneManager.LoadScene("Title");
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            sceneScript.StartCoroutine(sceneScript.SceneChange("Title"));
+            ScoreScript.score=0;
+        }
     }
 }
