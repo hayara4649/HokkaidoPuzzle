@@ -14,6 +14,10 @@ public class GotoMain : MonoBehaviour
     Color danger;
     Color safe;
 
+    [SerializeField] bool isChangeable = false;
+    [SerializeField] bool isUnchangeable = false;
+
+
     SceneScript sceneScript;
 
     private void Start()
@@ -28,13 +32,14 @@ public class GotoMain : MonoBehaviour
         danger = new Color(255, 0, 0);
         safe = new Color(184, 222, 111);
     }
-    private void OnTriggerStay2D(Collider2D other)
+
+    private void Update()
     {
-        if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Puzzle"))
+        if (isUnchangeable)
         {
             renderer.color = danger;
         }
-        else
+        if (isChangeable && !isUnchangeable)
         {
             renderer.color = safe;
             if (Input.GetMouseButtonUp(0))
@@ -44,22 +49,66 @@ public class GotoMain : MonoBehaviour
                 isPutted = true;
             }
         }
-        //クリックを離したときに
-
-
-
-        //パズルが北海道の内部だったらスコア加算
-        // if (other.gameObject.CompareTag("Hokkaido"))
-        // {
-        //     Debug.Log("hokkaido");
-        //     if (!isPutted)
-        //     {
-        //         sounds.Put();
-        //         sceneScript.StartCoroutine(sceneScript.SceneChange("Main-2D-"));
-        //         isPutted = true;
-        //     }
-        // }
-
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Border"))
+        {
+            isUnchangeable = true;
+        }
+        else if (other.gameObject.CompareTag("Hokkaido"))
+        {
+            isChangeable = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Border"))
+        {
+            isUnchangeable = false;
+        }
+        else if (other.gameObject.CompareTag("Hokkaido"))
+        {
+            isChangeable = false;
+        }
+    }
+
+
+
+        // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Puzzle"))
+    //     {
+    //         renderer.color = danger;
+    //     }
+    //     else
+    //     {
+    //         renderer.color = safe;
+    //         if (Input.GetMouseButtonUp(0))
+    //         {
+    //             sounds.Put();
+    //             sceneScript.StartCoroutine(sceneScript.SceneChange("Main-2D-"));
+    //             isPutted = true;
+    //         }
+    //     }
+    //     //クリックを離したときに
+
+
+
+    //     //パズルが北海道の内部だったらスコア加算
+    //     // if (other.gameObject.CompareTag("Hokkaido"))
+    //     // {
+    //     //     Debug.Log("hokkaido");
+    //     //     if (!isPutted)
+    //     //     {
+    //     //         sounds.Put();
+    //     //         sceneScript.StartCoroutine(sceneScript.SceneChange("Main-2D-"));
+    //     //         isPutted = true;
+    //     //     }
+    //     // }
+
+    // }
 }
 
