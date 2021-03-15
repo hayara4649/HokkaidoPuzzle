@@ -337,6 +337,7 @@ RectTransform:
   - {fileID: 1152546930}
   - {fileID: 558768056}
   - {fileID: 1960002630}
+  - {fileID: 1011381915}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -355,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 6482553053690049914, guid: 076acc47b98247d4f83f35ee03722817,
         type: 3}
       propertyPath: m_Name
-      value: hokkaido
+      value: hokkaido(Title)
       objectReference: {fileID: 0}
     - target: {fileID: 4877312733108444471, guid: 076acc47b98247d4f83f35ee03722817,
         type: 3}
@@ -23245,6 +23246,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e48cf9374c6bf34a95771aa5d202bd3, type: 3}
+--- !u!1 &1011381914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011381915}
+  - component: {fileID: 1011381917}
+  - component: {fileID: 1011381916}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1011381915
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011381914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 324950048}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.69847596, y: 0.123739734}
+  m_AnchorMax: {x: 0.69847596, y: 0.123739734}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 560.87, y: 98.36}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1011381916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011381914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.94509804, g: 0.88235295, b: 0.5372549, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2b7d106bcdf9be84eac03ed85b26d828, type: 3}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u2191\n\u3053\u3053\u306B\u5317\u6D77\u9053\u3092\u5165\u308C\u3066\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8"
+--- !u!222 &1011381917
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011381914}
+  m_CullTransparentMesh: 0
 --- !u!1 &1152546929
 GameObject:
   m_ObjectHideFlags: 0
@@ -23257,7 +23337,7 @@ GameObject:
   - component: {fileID: 1152546932}
   - component: {fileID: 1152546931}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23277,10 +23357,10 @@ RectTransform:
   m_Father: {fileID: 324950048}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2012204, y: 0.8545754}
-  m_AnchorMax: {x: 0.2012204, y: 0.8545754}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 316.72, y: 98.36}
+  m_AnchorMin: {x: 0.07889462, y: 0.8228672}
+  m_AnchorMax: {x: 0.07889462, y: 0.8228672}
+  m_AnchoredPosition: {x: 165, y: 14}
+  m_SizeDelta: {x: 327.16, y: 200.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152546931
 MonoBehaviour:
@@ -23303,19 +23383,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2b7d106bcdf9be84eac03ed85b26d828, type: 3}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: 8d044deba7cb32c4f9a1117950536fb3, type: 3}
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 7
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TheBiggestHokkaido
+  m_Text: 'The
+
+    Biggest
+
+    Hokkaido'
 --- !u!222 &1152546932
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23607,7 +23691,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30AF\u30EA\u30C3\u30AF&AD\u30AD\u30FC(or AD\u30AD\u30FC): \u56DE\u8EE2"
+  m_Text: "\u30AF\u30EA\u30C3\u30AF&AD\u30AD\u30FC(or \u2190\u2192\u30AD\u30FC): \u56DE\u8EE2"
 --- !u!222 &1960002632
 CanvasRenderer:
   m_ObjectHideFlags: 0

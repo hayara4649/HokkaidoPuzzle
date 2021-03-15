@@ -44,6 +44,7 @@ public class TitleController : MonoBehaviour
             hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction, distance);
             if (hit.collider)
             {
+                Debug.Log(hit.collider.tag);
                 // if (Physics.Raycast(ray, out hit, distance))  //マウスのポジションからRayを投げて何かに当たったらhitに入れる
                 if (hit.collider.CompareTag("Puzzle") )
                 {

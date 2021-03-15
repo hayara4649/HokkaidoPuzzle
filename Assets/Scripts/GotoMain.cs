@@ -37,24 +37,29 @@ public class GotoMain : MonoBehaviour
         else
         {
             renderer.color = safe;
+            if (Input.GetMouseButtonUp(0))
+            {
+                sounds.Put();
+                sceneScript.StartCoroutine(sceneScript.SceneChange("Main-2D-"));
+                isPutted = true;
+            }
         }
         //クリックを離したときに
-        if (Input.GetMouseButtonUp(0))
-        {
 
 
-            //パズルが北海道の内部だったらスコア加算
-            if (other.gameObject.CompareTag("Hokkaido"))
-            {
-                Debug.Log("hokkaido");
-                if (!isPutted)
-                {
-                    sounds.Put();
-                    sceneScript.StartCoroutine(sceneScript.SceneChange("Main-2D-"));
-                    isPutted = true;
-                }
-            }
 
-        }
+        //パズルが北海道の内部だったらスコア加算
+        // if (other.gameObject.CompareTag("Hokkaido"))
+        // {
+        //     Debug.Log("hokkaido");
+        //     if (!isPutted)
+        //     {
+        //         sounds.Put();
+        //         sceneScript.StartCoroutine(sceneScript.SceneChange("Main-2D-"));
+        //         isPutted = true;
+        //     }
+        // }
+
     }
 }
+
