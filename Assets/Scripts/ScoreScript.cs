@@ -63,8 +63,17 @@ public class ScoreScript : MonoBehaviour
             }
         }
         text.text = (textnum.ToString() + "km³");
-        if (time) time.text = ("残り" + remainingTime.ToString("f2") + "秒");
-
+        if (time) 
+        {
+            if(remainingTime<=5f)
+            {
+            time.text = "残り<color=#FF0000>" + remainingTime.ToString("f2") + "</color>秒";
+            }
+            else
+            {
+            time.text = "残り" + remainingTime.ToString("f2") + "秒";    
+            }
+        }
     }
 
     void DisplayScore()
